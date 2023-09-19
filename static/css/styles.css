@@ -28,10 +28,18 @@ body {
     position: relative;
     height: 400px;
     padding: 100px 0;
+    
 }
 
 .masthead .container {
     width: 90%;
+}
+
+.foot {
+    background-color:#181a1b;
+    position: relative;
+    height: 200px;
+    padding: 100px 0;
 }
 
 .navbar {
@@ -73,7 +81,8 @@ body {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 800;
     line-height: 1.2;
-  }
+    text-align: left;
+}
 
 header.masthead .page-heading,
 header.masthead .site-heading {
@@ -97,3 +106,69 @@ header.masthead .post-heading h1, header.masthead .post-heading .h1 {
   font-size: 2.25rem;
 }
 
+.rounded-square {
+    border-radius: 50% !important;
+}
+
+
+.img-fluid {
+    max-width: 400px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.display-4 {
+    font-size: calc(1.0rem + 1.0vw);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.display-5 {
+    font-size: calc(1.0rem + 1.0vw);
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.display-projects {
+    font-size: calc(1.0rem + 1.8vw);
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: left;
+}
+
+p a.navbar-brand {
+    color: black;
+}
+
+footer div.small {
+    color: white;
+}
+
+footer.masthead {
+    background-color:#181a1b;
+    position: relative;
+    height: 200px;
+    padding: 100px 0;
+}
+
+#button1 {
+    color: white;
+    background-color: black;
+}
+
+#button1:hover {
+    color: #181a1b;
+    background-color: #181a1b; 
+}
+
+#button2{
+    color: white;
+    background-color: black;
+}
+
+#button2:hover {
+    color: #181a1b;
+    background-color: #181a1b; 
+}
