@@ -35,7 +35,8 @@ body {
 }
 
 .navbar {
-    background-color: #181a1b; 
+    background-color: #181a1b;
+
 }
 
 .nav-link {
@@ -52,6 +53,10 @@ body {
 }
 .navbar-brand:hover {
     color: rgba(199, 193, 193, 0.788); 
+}
+
+.navbar-toggler {
+    color: white; 
 }
 
 #header-text {

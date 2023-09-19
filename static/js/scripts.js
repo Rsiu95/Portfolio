@@ -3,10 +3,11 @@ function applyHeaderBackgroundEffect() {
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
     const masthead = document.querySelector('.masthead');
-    const mastheadHeight = masthead.offsetHeight;
+    const navbar = document.querySelector('.navbar');
+    const mastheadHeight = masthead.offsetHeight + navbar.offsetHeight;
     canvas.width = window.innerWidth;
     canvas.height = mastheadHeight;
-    
+    const canvasPosition = canvas.getBoundingClientRect();
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'white';
 
@@ -37,8 +38,8 @@ function applyHeaderBackgroundEffect() {
                 const force = (this.effect.mouse.radius / distance);
                 if (distance < this.effect.mouse.radius) {
                     const angle = Math.atan2(dy, dx);
-                    this.pushX += Math.cos(angle) * force;
-                    this.pushY += Math.sin(angle) * force;
+                    this.pushX += Math.cos(angle) * force * 0.2;
+                    this.pushY += Math.sin(angle) * force * 0.2;
                 }
             }
             this.x += (this.pushX *= this.friction) + this.vx;
@@ -74,30 +75,32 @@ function applyHeaderBackgroundEffect() {
             this.width = this.canvas.width;
             this.height = this.canvas.height;
             this.particles = [];
-            this.numberOfParticles = 200;
+            this.numberOfParticles = 250;
             this.createParticles();
 
             this.mouse = {
                 x: 0,
                 y: 0,
                 pressed: false,
-                radius: 150
+                radius: 100
             }
 
             window.addEventListener('mousemove', e => {
+                const mouseY = e.clientY - canvasPosition.top;
                 if (this.mouse.pressed){
                     this.mouse.x = e.x;
-                    this.mouse.y = e.y;
+                    this.mouse.y = mouseY;
                 }
-                console.log(this.mouse.x, this.mouse.y)
+                
                 this.mouse.x = e.x;
-                this.mouse.y = e.y;
+                this.mouse.y = mouseY;
             });
 
             window.addEventListener('mousedown', e => {
+                const mouseY = e.clientY - canvasPosition.top;
                 this.mouse.pressed = true;
                 this.mouse.x = e.x;
-                this.mouse.y = e.y;
+                this.mouse.y = mouseY;
             });
 
             window.addEventListener('mouseup', e => {
@@ -145,6 +148,7 @@ function applyHeaderBackgroundEffect() {
             }
 
             for (let a = 0; a < this.particles.length; a++) {
+                
                 const mouseDistance = Math.hypot(this.mouse.x - this.particles[a].x, this.mouse.y - this.particles[a].y);
                 if (mouseDistance < maxDistance) {
                     context.save();
@@ -155,6 +159,7 @@ function applyHeaderBackgroundEffect() {
                     context.lineTo(this.particles[a].x, this.particles[a].y);
                     context.stroke();
                     context.restore();
+                    
                 }
             }
         }
