@@ -193,9 +193,13 @@ footer.masthead {
     box-shadow: 0 10px 50px rgba(0,0,0,0.1);
     border-radius: 24px;
 }
+
+.floating-contact-form .form-container form input[type="name"]{
+    margin-top: 20px;
+}
+
 .floating-contact-form *{
     box-sizing: border-box;
-    margin-top: 10px;
     position: relative;
 }
 .floating-contact-form h3::after{
@@ -208,7 +212,7 @@ footer.masthead {
     bottom: -4px;
 }
 
-.floating-contact-form form input[type="text"],
+.floating-contact-form form input,
 .floating-contact-form form textarea {
     width: 100%;
     padding: 14px 32px;
@@ -234,9 +238,9 @@ footer.masthead {
     z-index: 1;
 }
 
-.floating-contact-form .field-container .icon-container {
+.floating-contact-form .field-container i {
     position: absolute;
-    top: 300px !important;
+    top: 10px !important;
     z-index: 1;
 }
 
