@@ -7,6 +7,7 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        
     </head>
     <body>
         {% include "header.html" %}
@@ -15,18 +16,19 @@
                 <section id="about-me">
                     <div class="container px-5">
                         <div class="row gx-5 align-items-top">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-5 col-md-12 col-sm-12 col-xxl-4">
                                 <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                    <img class="img-fluid rounded" src="static/img/me.jfif" alt="Roy">
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-md-6 col-sm-12">
+                            <div class="col-lg-7 col-md-12 col-sm-12 col-xxl-8">
                                 <div class="p-5">
                                     <h2 class="display-4">About Me</h2>
                                     <p>I never thought I'd want to pursue a career in Software Development/Engineering as I never thought I was any good at it. 
                                         It wasn't until my job required me to revisit the glory days that I realised that this was the right career for me. I try
                                         to spend as much time as I can working on side projects or learning new technologies as the world moves 
-                                        too quickly for me to slow down. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
+                                        too quickly and there are far too many things that I want to learn. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
+                                        <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -41,29 +43,184 @@
                     <div class="container px-5">
                         <div class="row gx-5 align-items-top">
                             <h2 class="display-5">Projects</h2>
-                            <div class="row align-items-md-stretch">
-                                <div class="col-md-6">
-                                  <div class="h-100 p-5 border rounded-3">
-                                    <h2>Change the background</h2>
-                                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-                                    <button class="btn btn-outline-secondary" type="button" id="button1">Live</button>
-                                    <button class="btn btn-outline-secondary" type="button" id="button2">Code</button>
-                                  </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy" id="project-photo">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
                                 </div>
-                                <div class="col-md-6">
-                                  <div class="h-100 p-5 border rounded-3">
-                                    <h2>Add borders</h2>
-                                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-                                    <button class="btn btn-outline-secondary" type="button" id="button1">Demo</button>
-                                    <button class="btn btn-outline-secondary" type="button" id="button2">Code</button>
-                                  </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
                                 </div>
-                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
+                                </div>
+                            </div>
                         </div>
+                        <div class="row gx-5 align-items-top">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy" id="project-photo">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </section>
             </div>
         </div>
+        <div class="container px-4 px-lg-5">
+            <div class="d-flex justify-content-left mb-4">
+                <section id="skills">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-top">
+                            <div class="col-lg-5 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-12 col-sm-12 col-xxl-8">
+                                <div class="p-5">
+                                    <h2 class="display-4">Skills</h2>
+                                    <p>I never thought I'd want to pursue a career in Software Development/Engineering as I never thought I was any good at it. 
+                                        It wasn't until my job required me to revisit the glory days that I realised that this was the right career for me. I try
+                                        to spend as much time as I can working on side projects or learning new technologies as the world moves 
+                                        too quickly and there are far too many things that I want to learn. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
+                                        <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5">
+            <div class="d-flex justify-content-left mb-4">
+                <section id="education">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-top">
+                            <div class="col-lg-7 col-md-12 col-sm-12 col-xxl-8">
+                                <div class="p-5">
+                                    <h2 class="display-4">Education</h2>
+                                    <p>I never thought I'd want to pursue a career in Software Development/Engineering as I never thought I was any good at it. 
+                                        It wasn't until my job required me to revisit the glory days that I realised that this was the right career for me. I try
+                                        to spend as much time as I can working on side projects or learning new technologies as the world moves 
+                                        too quickly and there are far too many things that I want to learn. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
+                                        <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-12 col-sm-12 col-xxl-4">
+                                <div class="p-5">
+                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="floating-contact-form">
+                        <div class="form-container">
+                            <h3>Contact Me</h3>
+                            <div id="successMessage" class="alert alert-success" style="display: none;">Message sent successfully!</div>
+                            <form action = "/" id="contactForm" method = "post">
+                                <div class="field-container">
+                                    <i class="fa-solid fa-signature"></i>
+                                    <label for="name">Name:</label>
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="name"/>
+                                </div>
+                                <div class="field-container">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" id="email" type="text" placeholder="Enter your email..." name="name"/>
+                                </div>
+                                <div class="field-container">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <label for="phone">Phone:</label>
+                                    <input class="form-control" id="phone" type="text" placeholder="Enter your phone..." name="name"/>
+                                </div>
+                                <div class="field-container">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <label for="phone">Message:</label>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                </div>
+                                <button class="btn btn-dark text-uppercase" id="submitButton" type="submit">Send</button>
+                            </form>
+                    </div>
+                    
+                    
+
+                
+                            <!--      <div id="successMessage" class="alert alert-success" style="display: none;">Message sent successfully!</div>
+                                    <form action = "/" id="contactForm" method = "post">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="name"/>
+                                            <label for="name">Name</label>
+                                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                            
+                                        </div>
+                                        <div class="form-floating">
+                                            <input class="form-control" id="email" type="email" placeholder="Enter your email..." name="email"/>
+                                            <label for="email">Email address</label>
+                                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." name="phone"/>
+                                            <label for="phone">Phone Number</label>
+                                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
+                                            <label for="message">Message</label>
+                                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                        </div>
+                                        <br />
+                                        <div class="d-none" id="submitSuccessMessage">
+                                            <div class="text-center mb-3">
+                                                <div class="fw-bolder">Form submission successful!</div>
+                                                To activate this form, sign up at
+                                                <br />
+                                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                        <button class="btn btn-dark text-uppercase" id="submitButton" type="submit">Send</button>
+                                    </form>-->
+                                
+                            
+                            
+                            
+                </div>
+            </div>
+        </section>  
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         {% include "footer.html" %}
     </body>
