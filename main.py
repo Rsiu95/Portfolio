@@ -20,6 +20,7 @@ def home():
     if request.method == "POST":
         data = request.form
         print(f"Name: {data['name']}\nEmail: {data['email']}\nPhone: {data['phone']}\nMessage: {data['message']}")
+        
         try:
             connection = smtplib.SMTP("smtp.gmail.com", port=587)
             connection.starttls()

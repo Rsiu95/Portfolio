@@ -145,33 +145,43 @@
                 <div class="d-flex justify-content-center mb-4">
                     <div class="floating-contact-form">
                         <div class="form-container">
-                            <h3>Contact Me</h3>
-                            <div id="successMessage" style="display: none;">Message sent successfully!</div>
-                            <form action = "/" id="contactForm" method = "post">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="name" placeholder="Enter your name..." name="name"/>
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                    
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." name="email"/>
-                                    <label for="email">Email</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." name="phone"/>
-                                    <label for="phone">Phone</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <button class="btn btn-dark text-uppercase" id="submitButton" type="submit">Send</button>
-                            </form>
+                            <div class="row">
+                                <h3>Contact Me</h3>
+                            </div>
+                            <div class="row gx-5 align-items-top">
+                                <div id="successMessage" style="display: none;">Message sent successfully!</div>
+                                <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
+                                    <form action = "/" id="contactForm" method = "post">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="name" type="name" placeholder="Enter your name..." name="name"/>
+                                            <label for="name"><i class="fa-solid fa-signature"></i> Name </label>
+                                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input class="form-control" id="email" type="email" placeholder="Enter your email..." name="email"/>
+                                            <label for="email"><i class="fa-regular fa-envelope"></i> Email</label>
+                                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." name="phone"/>
+                                            <label for="phone"><i class="fa-solid fa-mobile-screen-button"></i> Phone</label>
+                                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 col-sm-12 col-xxl-4">
+                                        <div class="form-floating" id="message-box">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 13.5rem"></textarea>
+                                            <label for="message"> <i class="fa-solid fa-pen-to-square"></i> Message</label>
+                                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-end">
+                                        <button class="btn btn-dark text-uppercase" id="submitButton" type="submit">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
