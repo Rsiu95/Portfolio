@@ -14,13 +14,22 @@ body {
     overflow: hidden;
 }
 
-#canvas1 {
+.foot {
+    background-color:#181a1b;
+    position: relative;
+    height: 150px;
+    padding: 30px 30px;
+    z-index: 2;
+}
+canvas {
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: auto;
-    pointer-events: none;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: auto;
 }
 
 .masthead {
@@ -35,16 +44,12 @@ body {
     width: 90%;
 }
 
-.foot {
-    background-color:#181a1b;
-    position: relative;
-    height: 200px;
-    padding: 100px 0;
-}
-
 .navbar {
-    background-color: #181a1b;
-
+    background-color: transparent;
+    position: absolute;
+    top: 0; 
+    width: 100%;
+    z-index: 2;
 }
 
 .nav-link {
