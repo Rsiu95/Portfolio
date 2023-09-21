@@ -246,3 +246,65 @@ footer.masthead {
 #message-box {
     margin-top: 20px;
 }
+
+.skills .skills-icons {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.icon-container {
+    text-align: center;
+    padding: 10px;
+}
+.icon {
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.row.justify-content-center {
+    text-align: center;
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon-grid .col {
+    max-width: 25%; 
+    flex-basis: calc(100% / 4);
+    margin-bottom: 20px; 
+}
+
+.text-center{
+    padding-bottom: 20px;
+}
+
+.icon-canvas {
+    position: inherit;
+    width: 90px;
+    height: 90px;
+    
+}
+#skills {
+    background-color: black;
+}

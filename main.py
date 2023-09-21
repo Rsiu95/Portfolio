@@ -20,7 +20,6 @@ def home():
     if request.method == "POST":
         data = request.form
         print(f"Name: {data['name']}\nEmail: {data['email']}\nPhone: {data['phone']}\nMessage: {data['message']}")
-        
         try:
             connection = smtplib.SMTP("smtp.gmail.com", port=587)
             connection.starttls()
@@ -31,6 +30,7 @@ def home():
                 msg=f"Subject: {data['name']} has contacted you! \n\nName: {data['name']}\nEmail: {data['email']}\nPhone: {data['phone']}\nMessage: {data['message']}"
             )
             connection.quit()
+            print("Message Sent!")
             return jsonify({"success": True})
         except Exception as e:
             return jsonify({"success": False, "error_message": str(e)})
