@@ -29,7 +29,7 @@
                                         It wasn't until my job required me to revisit the glory days that I realised that this was the right career for me. I try
                                         to spend as much time as I can working on side projects or learning new technologies as the world moves 
                                         too quickly and there are far too many things that I want to learn. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
-                                        <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">Read More</a>
+                                        <a class="btn btn-dark text-uppercase" id="read-more" href="{{url_for('about_me')}}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -41,57 +41,13 @@
         <div class="container px-4 px-lg-5">
             <div class="d-flex justify-content-left mb-4">
                 <section id="projects">
-                    <div class="container px-5">
-                        <div class="row gx-5 align-items-top">
-                            <h2 class="display-5">Projects</h2>
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy" id="project-photo">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row gx-5 align-items-top">
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy" id="project-photo">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
-                                    <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    <h2>Projects</h2>
                 </section>
             </div>
         </div>
-        
+        <div class="container px-4 px-lg-5">
             <section id="skills">
-                <div class="container">
+                <div class="container" id="test">
                     <div class="text-center mb-4">
                         <h2>Technical Skills</h2>
                     </div>
@@ -99,7 +55,7 @@
                     <div class="icon-grid">
                         <div class="col">
                             <div class="icon-container">
-                                <canvas class="icon-canvas" id="icon-canvas"><iconify-icon icon="logos:flask" class="icon" aria-hidden="true" width="90px" height="90px"></iconify-icon></canvas>
+                               <iconify-icon icon="logos:flask" class="icon" aria-hidden="true" width="90px" height="90px" alt="Flask"></iconify-icon>
                             </div>
                         </div>
                         <div class="col">
@@ -148,44 +104,17 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>                
-                <a class="btn btn-outline-secondary justify-content-center" id="reset-button">Reset</a>
+                </div>            
             </section>
-        
-        <div class="container px-4 px-lg-5">
-            <div class="d-flex justify-content-left mb-4">
-                <section id="education">
-                    <div class="container px-5">
-                        <div class="row gx-5 align-items-top">
-                            <div class="col-lg-7 col-md-12 col-sm-12 col-xxl-8">
-                                <div class="p-5">
-                                    <h2 class="display-4">Education</h2>
-                                    <p>I never thought I'd want to pursue a career in Software Development/Engineering as I never thought I was any good at it. 
-                                        It wasn't until my job required me to revisit the glory days that I realised that this was the right career for me. I try
-                                        to spend as much time as I can working on side projects or learning new technologies as the world moves 
-                                        too quickly and there are far too many things that I want to learn. </br></br>I've spent most of my time working with Python, C, JavaScript, CSS and HTML.</p>
-                                        <a class="btn btn-outline-secondary" href="{{url_for('about_me')}}">Read More</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-12 col-sm-12 col-xxl-4">
-                                <div class="p-5">
-                                    <img class="img-fluid rounded" src="static/img/doggo.png" alt="Roy">
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </section>
-            </div>
         </div>
+        
         <section id="contact">
             <div class="container px-4 px-lg-5">
                 <div class="d-flex justify-content-center mb-4">
                     <div class="floating-contact-form">
-                        <div class="form-container">
+                        <div class="form-container" id="form-container">
                             <div class="row">
-                                <h3>Contact Me</h3>
+                                <h3 id="contact-me-bruh">Contact Me</h3>
                             </div>
                             <div class="row gx-5 align-items-top">
                                 <div id="successMessage" style="display: none;">Message sent successfully!</div>
@@ -193,25 +122,25 @@
                                     <form action = "/" id="contactForm" method = "post">
                                         <div class="form-floating">
                                             <input class="form-control" id="name" type="name" placeholder="Enter your name..." name="name"/>
-                                            <label for="name"><i class="fa-solid fa-signature"></i> Name </label>
+                                            <label class="text" for="name"><i class="fa-solid fa-signature"></i> Name </label>
                                             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                         </div>
                                         <div class="form-floating">
                                             <input class="form-control" id="email" type="email" placeholder="Enter your email..." name="email"/>
-                                            <label for="email"><i class="fa-regular fa-envelope"></i> Email</label>
+                                            <label class="text" for="email"><i class="fa-regular fa-envelope"></i> Email</label>
                                             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                         </div>
                                         <div class="form-floating">
                                             <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." name="phone"/>
-                                            <label for="phone"><i class="fa-solid fa-mobile-screen-button"></i> Phone</label>
+                                            <label class="text" for="phone"><i class="fa-solid fa-mobile-screen-button"></i> Phone</label>
                                             <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                         </div>
                                     </div>
                                     <div class="col-lg-8 col-md-12 col-sm-12 col-xxl-4">
                                         <div class="form-floating" id="message-box">
                                             <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 13.5rem"></textarea>
-                                            <label for="message"> <i class="fa-solid fa-pen-to-square"></i> Message</label>
+                                            <label class="text" for="message"> <i class="fa-solid fa-pen-to-square"></i> Message</label>
                                             <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                         </div>
                                     </div>
