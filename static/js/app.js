@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 280,
           "density": {
             "enable": true,
             "value_area": 800
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 180,
           "density": {
             "enable": true,
             "value_area": 800
