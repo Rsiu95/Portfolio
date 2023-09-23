@@ -331,7 +331,12 @@ ul {
 }
 
 .text-center{
+    text-align: center;
     padding-bottom: 20px;
+}
+
+.project-text {
+    font-size: 50px;
 }
 
 .text-education{
@@ -355,12 +360,12 @@ ul {
     background-color: #2a2b2c; 
 }
 
-#read-more.dark-mode {
+.read-more.dark-mode {
     background-color: white;
     color: black;
 }
 
-#read-more.dark-mode:hover {
+.read-more.dark-mode:hover {
     color: white;
     background-color: #2a2b2c; 
 }
@@ -459,3 +464,30 @@ ul {
 .dark-mode-button:checked + .dark-button svg.moon {
     fill: #fff;
 }
+
+.animate {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+  }
+  
+
+.left{
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.right{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter:blur(0);
+    transform: translateY(0) translateX(0);
+}
+
