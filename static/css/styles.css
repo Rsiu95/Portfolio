@@ -360,12 +360,22 @@ ul {
     background-color: #2a2b2c; 
 }
 
-.read-more.dark-mode {
+#read-more.dark-mode {
     background-color: white;
     color: black;
 }
 
-.read-more.dark-mode:hover {
+#read-more.dark-mode:hover {
+    color: white;
+    background-color: #2a2b2c; 
+}
+
+#read-more1.dark-mode {
+    background-color: white;
+    color: black;
+}
+
+#read-more1.dark-mode:hover {
     color: white;
     background-color: #2a2b2c; 
 }
