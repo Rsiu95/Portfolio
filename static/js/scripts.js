@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             enableDarkMode();
         }
-    });
+    }); 
 
     function enableDarkMode() {
         body.classList.add("dark-mode");
