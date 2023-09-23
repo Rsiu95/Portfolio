@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import smtplib, os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from flask_bootstrap import Bootstrap5
 
 
-load_dotenv()
+#load_dotenv()
 
 MY_EMAIL = os.getenv("EMAIL")
 MY_PASSWORD = os.getenv("PASSWORD")
