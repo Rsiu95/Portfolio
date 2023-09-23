@@ -171,3 +171,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+let typed = new Typed('.auto-input', {
+    strings: ['Software Developer', 'Fullstack Developer', 'Software Engineer', 'Electrical Engineer', 'Systems Engineer'],
+    typeSpeed: 70,
+    backSpeed: 70,
+    backDelay: 2000,
+    loop:true,
+    smartBackspace: true
+    
+});
