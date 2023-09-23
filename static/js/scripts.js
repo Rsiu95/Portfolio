@@ -88,10 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const skillsSection = document.getElementById("skills");
     const floatingContactForm = document.querySelector(".floating-contact-form");
     const formSection = document.getElementById("form-container")
-    //onst masthead = document.getElementsByClassName('masthead')[0];
     const contact = document.getElementById("contact-me-bruh");
     const submitButton = document.getElementById("submitButton");
     const readMore = document.getElementById("read-more");
+    const backtotop = document.querySelector(".back-to-top");
 
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
         enableDarkMode();
@@ -109,11 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add("dark-mode");
         skillsSection.classList.add("dark-mode");
         formSection.classList.add("dark-mode");
-        //masthead.classList.add('dark-mode');
         contact.classList.add('dark-mode');
         floatingContactForm.classList.add('dark-mode');
         submitButton.classList.add('dark-mode');
         readMore.classList.add('dark-mode');
+        backtotop.classList.add('dark-mode');
         localStorage.setItem("dark-mode", "enabled");
     }
 
@@ -121,11 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.remove("dark-mode");
         skillsSection.classList.remove("dark-mode");
         formSection.classList.remove("dark-mode");
-        //masthead.classList.remove('dark-mode');
         contact.classList.remove('dark-mode');
         floatingContactForm.classList.remove('dark-mode');
         submitButton.classList.remove('dark-mode');
         readMore.classList.remove('dark-mode');
+        backtotop.classList.remove('dark-mode');
         localStorage.setItem("dark-mode", "disabled");
     }
 });
@@ -152,3 +152,22 @@ document.addEventListener("DOMContentLoaded", function () {
     rightElements.forEach((el) => observer.observe(el));
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    }
+
+    document.querySelector('.back-to-top').addEventListener('click', scrollToTop);
+
+    window.addEventListener('scroll', function () {
+        var button = document.querySelector('.back-to-top');
+        if (window.scrollY > 300) { 
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+});

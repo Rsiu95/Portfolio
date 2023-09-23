@@ -501,3 +501,19 @@ ul {
     transform: translateY(0) translateX(0);
 }
 
+.back-to-top {
+    bottom: 30px;
+    right: 30px;
+}
+
+.back-to-top {
+    background: #181a1b;
+}
+
+.back-to-top.dark-mode {
+    background: white;
+    fill: #181a1b;
+}
+.back-to-top.dark-mode svg path{
+    fill: #181a1b;
+}
