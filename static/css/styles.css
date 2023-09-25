@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    overflow-x: hidden;
     color: #000000;
 }
 
@@ -525,4 +526,22 @@ ul {
 }
 .back-to-top.dark-mode svg path{
     fill: #181a1b;
+}
+
+.gamer-text {
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    background-color: #181a1b;
+    margin: 0;
+    padding: 0;
+}
+
+#about-me-section {
+    background-color: #181a1b;
+    display: block;
+    z-index: -1;
+    position: relative;
+    
 }

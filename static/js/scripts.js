@@ -181,3 +181,6 @@ let typed = new Typed('.auto-input', {
     smartBackspace: true
     
 });
+
+
+
