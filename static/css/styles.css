@@ -534,14 +534,19 @@ ul {
     text-align: center;
     z-index: 1;
     background-color: #181a1b;
+    margin-bottom: 20px;
     margin: 0;
     padding: 0;
 }
 
 #about-me-section {
     background-color: #181a1b;
-    display: block;
-    z-index: -1;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     position: relative;
-    
+    width: 512px;
+    height: 512px;
+    margin: 0 auto; /* Optional: To center horizontally within the viewport */
 }
+
