@@ -14,7 +14,7 @@ let shipY = 0;
 
 let ship = {
     x: shipX,
-    y: shipY,
+    y: shipY + 20,
     width: shipWidth,
     height: shipHeight,
 };
@@ -29,7 +29,7 @@ let alienX = tileSize;
 let alienY = tileSize;
 let alienImage;
 
-let alienRows = 13;
+let alienRows = 10;
 let alienColumns = 7;
 let alienCount = 0;
 
@@ -127,7 +127,7 @@ function createAliens() {
             let alien = {
                 img: alienImage,
                 x: alienX + c * alienWidth,
-                y: alienY + r * alienHeight,
+                y: alienY + r * alienHeight - 50,
                 width: alienWidth,
                 height: alienHeight,
                 alive : true
@@ -157,4 +157,53 @@ function detectCollision(a, b) {
             a.x + a.width > b.x &&
             a.y < b.y + b.height &&
             a.y + a.height > b.y;
+}
+
+document.getElementById('reset').addEventListener('click', resetGame);
+document.getElementById('clear').addEventListener('click', clearCanvas);
+
+// Function to reset the game
+function resetGame() {
+    // Clear the canvas
+    context.clearRect(0, 0, board.width, board.height);
+    
+    // Reset ship position
+    ship.x = shipX;
+    ship.y = shipY + 20;
+    
+    // Reset alien positions and state
+    createAliens();
+    
+    // Reset other game variables if needed
+    alienCount = alienArray.length;
+    
+    // Request animation frame to continue the game loop
+    requestAnimationFrame(update);
+}
+
+// Function to clear the canvas (remove all aliens and canvas element)
+function clearCanvas() {
+    // Remove the canvas element from the DOM
+    const canvas = document.getElementById('about-me-section');
+    canvas.remove();
+    
+    // Recreate the canvas element and context
+    board = document.createElement('canvas');
+    board.id = 'about-me-section';
+    board.width = boardWidth;
+    board.height = boardHeight;
+    context = board.getContext("2d");
+    
+    // Add the new canvas element to the container
+    const container = document.querySelector('.about-me-container');
+    container.appendChild(board);
+    
+    // Remove all aliens from the array
+    alienArray = [];
+    
+    // Redraw the ship on the cleared canvas
+    context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
+    
+    // Request animation frame to continue the game loop
+    requestAnimationFrame(update);
 }
