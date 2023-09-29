@@ -2,36 +2,34 @@ let tileSize = 32;
 let rows=16;
 let columns=16;
 
-// Fixed canvas size
-const canvasWidth = tileSize * columns;
-const canvasHeight = tileSize * rows;
-
 let board;
+let boardWidth = tileSize * columns;
+let boardHeight = tileSize * rows;
 let context;
 
-let shipWidth = tileSize * 2;
+let shipWidth = tileSize*2;
 let shipHeight = tileSize;
-let shipX = tileSize * columns / 2 - tileSize;
-let shipY = tileSize * rows - tileSize * 2;
+let shipX = tileSize * columns /2 - tileSize;
+let shipY = 0;
 
 let ship = {
     x: shipX,
-    y: shipY,
+    y: shipY + 20,
     width: shipWidth,
     height: shipHeight,
 };
 
 let shipImage;
-let shipVelocityX = tileSize;
+let shipVelocityX = tileSize; 
 
 let alienArray = [];
-let alienWidth = tileSize * 2;
+let alienWidth = tileSize*2;
 let alienHeight = tileSize;
 let alienX = tileSize;
 let alienY = tileSize;
 let alienImage;
 
-let alienRows = 7;
+let alienRows = 10;
 let alienColumns = 7;
 let alienCount = 0;
 
@@ -46,10 +44,11 @@ for (let i = 1; i <= 4; i++) {
 let bulletArray = [];
 let bulletVelocityY = -10;
 
+
 window.onload = function () {
     board = document.getElementById('about-me-section');
-    board.width = canvasWidth; // Set canvas width
-    board.height = canvasHeight; // Set canvas height
+    board.width = boardWidth;
+    board.height = boardHeight;
     context = board.getContext("2d");
 
     shipImage = new Image();
@@ -69,15 +68,19 @@ window.onload = function () {
 
 function update() {
     requestAnimationFrame(update);
-    context.clearRect(0, 0, canvasWidth, canvasHeight);
-    context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
+    context.clearRect(0, 0, board.width, board.height);
+    context.scale(1, -1);
+    context.drawImage(shipImage, ship.x, -ship.y - ship.height, ship.width, ship.height);
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    
+    //context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
 
     for (let i = 0; i < alienArray.length; i++) {
         let alien = alienArray[i];
         if (alien.alive) {
             // Calculate the index of the current alien image based on time
             let currentIndex = Math.floor((Date.now() % (alienStates.length * alienRotationInterval)) / alienRotationInterval);
-
+            
             // Draw the current alien image with rotation
             context.save();
             context.translate(alien.x + alien.width / 2, alien.y + alien.height / 2);
@@ -89,7 +92,7 @@ function update() {
 
     for (let i = 0; i < bulletArray.length; i++) {
         let bullet = bulletArray[i];
-        bullet.y += bulletVelocityY;
+        bullet.y -= bulletVelocityY;
         context.fillStyle = "white";
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
 
@@ -103,8 +106,9 @@ function update() {
         }
     }
 
-    while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y < 0)) {
+    while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y > boardHeight)) {
         bulletArray.shift();
+        console.log(bulletArray)
     }
 }
 function moveShip(e) {
@@ -119,10 +123,11 @@ function moveShip(e) {
 function createAliens() {
     for (let c = 0; c < alienColumns; c++) {
         for (let r = 0; r < alienRows; r++ ) {
+            let alienY = boardHeight - alienRows * alienHeight;
             let alien = {
                 img: alienImage,
                 x: alienX + c * alienWidth,
-                y: alienY + r * alienHeight,
+                y: alienY + r * alienHeight - 50,
                 width: alienWidth,
                 height: alienHeight,
                 alive : true
@@ -138,7 +143,7 @@ function shoot(e) {
     if (e.code == "Space") {
         let bullet = {
             x: ship.x + shipWidth*15/32,
-            y: ship.y,
+            y: ship.y + shipHeight,
             width: tileSize/8,
             height: tileSize/2,
             used: false
@@ -152,4 +157,53 @@ function detectCollision(a, b) {
             a.x + a.width > b.x &&
             a.y < b.y + b.height &&
             a.y + a.height > b.y;
+}
+
+document.getElementById('reset').addEventListener('click', resetGame);
+document.getElementById('clear').addEventListener('click', clearCanvas);
+
+// Function to reset the game
+function resetGame() {
+    // Clear the canvas
+    context.clearRect(0, 0, board.width, board.height);
+    
+    // Reset ship position
+    ship.x = shipX;
+    ship.y = shipY + 20;
+    
+    // Reset alien positions and state
+    createAliens();
+    
+    // Reset other game variables if needed
+    alienCount = alienArray.length;
+    
+    // Request animation frame to continue the game loop
+    requestAnimationFrame(update);
+}
+
+// Function to clear the canvas (remove all aliens and canvas element)
+function clearCanvas() {
+    // Remove the canvas element from the DOM
+    const canvas = document.getElementById('about-me-section');
+    canvas.remove();
+    
+    // Recreate the canvas element and context
+    board = document.createElement('canvas');
+    board.id = 'about-me-section';
+    board.width = boardWidth;
+    board.height = boardHeight;
+    context = board.getContext("2d");
+    
+    // Add the new canvas element to the container
+    const container = document.querySelector('.about-me-container');
+    container.appendChild(board);
+    
+    // Remove all aliens from the array
+    alienArray = [];
+    
+    // Redraw the ship on the cleared canvas
+    context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
+    
+    // Request animation frame to continue the game loop
+    requestAnimationFrame(update);
 }
