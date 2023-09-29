@@ -73,18 +73,15 @@ function update() {
     context.drawImage(shipImage, ship.x, -ship.y - ship.height, ship.width, ship.height);
     context.setTransform(1, 0, 0, 1, 0, 0);
     
-    //context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
 
     for (let i = 0; i < alienArray.length; i++) {
         let alien = alienArray[i];
         if (alien.alive) {
-            // Calculate the index of the current alien image based on time
             let currentIndex = Math.floor((Date.now() % (alienStates.length * alienRotationInterval)) / alienRotationInterval);
             
-            // Draw the current alien image with rotation
             context.save();
             context.translate(alien.x + alien.width / 2, alien.y + alien.height / 2);
-            context.rotate((Math.PI / 180) * 180 * currentIndex); // Rotate 180 degrees clockwise
+            context.rotate((Math.PI / 180) * 180 * currentIndex); 
             context.drawImage(alienStates[currentIndex], -alien.width / 2, -alien.height / 2, alien.width, alien.height);
             context.restore();
         }
@@ -162,48 +159,36 @@ function detectCollision(a, b) {
 document.getElementById('reset').addEventListener('click', resetGame);
 document.getElementById('clear').addEventListener('click', clearCanvas);
 
-// Function to reset the game
+
 function resetGame() {
-    // Clear the canvas
     context.clearRect(0, 0, board.width, board.height);
     
-    // Reset ship position
     ship.x = shipX;
     ship.y = shipY + 20;
     
-    // Reset alien positions and state
     createAliens();
     
-    // Reset other game variables if needed
     alienCount = alienArray.length;
     
-    // Request animation frame to continue the game loop
     requestAnimationFrame(update);
 }
 
-// Function to clear the canvas (remove all aliens and canvas element)
 function clearCanvas() {
-    // Remove the canvas element from the DOM
     const canvas = document.getElementById('about-me-section');
     canvas.remove();
     
-    // Recreate the canvas element and context
     board = document.createElement('canvas');
     board.id = 'about-me-section';
     board.width = boardWidth;
     board.height = boardHeight;
     context = board.getContext("2d");
     
-    // Add the new canvas element to the container
     const container = document.querySelector('.about-me-container');
     container.appendChild(board);
     
-    // Remove all aliens from the array
     alienArray = [];
     
-    // Redraw the ship on the cleared canvas
     context.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
     
-    // Request animation frame to continue the game loop
     requestAnimationFrame(update);
 }

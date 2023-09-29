@@ -530,7 +530,7 @@ ul {
     padding: 0;
 }
 .about-me-container {
-    position: relative; /* Ensure relative positioning for the container */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -538,13 +538,13 @@ ul {
 }
 #about-me-section {
     background-color: #181a1b;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
     position: relative;
     width: 640px;
     height: 640px;
-    margin: 0 auto; /* Optional: To center horizontally within the viewport */
+    margin: 0 auto;
 }
 
 .canvas-container {
