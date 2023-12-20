@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from flask_bootstrap import Bootstrap5
 
 
+
 load_dotenv()
 
 MY_EMAIL = os.getenv("EMAIL")
